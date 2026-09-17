@@ -1543,6 +1543,191 @@
             .hero-stats { gap: 30px; }
             .resume-btn { display: none; }
         }
+
+      .about-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+      /* =====================================================
+   ABOUT SECTION - PREMIUM SCROLL ANIMATIONS
+   ===================================================== */
+
+#about .section-header,
+#about .about-image-wrapper,
+#about .about-text p,
+#about .info-item {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Heading animation */
+#about .section-header {
+    transform: translateY(25px);
+}
+
+/* Profile image animation */
+#about .about-image-wrapper {
+    transform: translateY(50px) scale(0.94);
+    transition-duration: 1s;
+}
+
+/* Text animation */
+#about .about-text p:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+#about .about-text p:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+/* Info cards animation */
+#about .info-item:nth-child(1) {
+    transition-delay: 0.4s;
+}
+
+#about .info-item:nth-child(2) {
+    transition-delay: 0.5s;
+}
+
+#about .info-item:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+#about .info-item:nth-child(4) {
+    transition-delay: 0.7s;
+}
+
+
+/* Active state */
+#about.about-visible .section-header,
+#about.about-visible .about-image-wrapper,
+#about.about-visible .about-text p,
+#about.about-visible .info-item {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+      
+/* =====================================================
+   PROFILE IMAGE EFFECT
+   ===================================================== */
+
+#about .about-image {
+    position: relative;
+    overflow: hidden;
+}
+
+#about .about-image img {
+    transition:
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.8s ease;
+}
+
+/* Image slowly settles into place */
+#about.about-visible .about-image img {
+    animation: aboutImageReveal 1.4s ease-out both;
+}
+
+@keyframes aboutImageReveal {
+    0% {
+        transform: scale(1.12);
+        filter: brightness(0.7);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+
+/* Desktop hover */
+@media (min-width: 769px) {
+    #about .about-image:hover img {
+        transform: scale(1.035);
+    }
+}
+
+
+/* =====================================================
+   BLUE CORNER DECORATION
+   ===================================================== */
+
+#about .deco {
+    transition: all 0.4s ease;
+}
+
+#about.about-visible .deco-1 {
+    animation: decoPulse 2.5s ease-in-out infinite;
+}
+
+#about.about-visible .deco-2 {
+    animation: decoPulse 2.5s ease-in-out infinite 1.2s;
+}
+
+@keyframes decoPulse {
+    0%,
+    100% {
+        opacity: 0.55;
+        filter: drop-shadow(0 0 0px rgba(59, 130, 246, 0));
+    }
+
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8));
+    }
+}
+
+
+/* =====================================================
+   INFO ITEM HOVER
+   ===================================================== */
+
+#about .info-item {
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+#about .info-item:hover {
+    transform: translateY(-5px) !important;
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    #about .section-header,
+    #about .about-image-wrapper,
+    #about .about-text p,
+    #about .info-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    #about.about-visible .about-image img,
+    #about.about-visible .deco-1,
+    #about.about-visible .deco-2 {
+        animation: none;
+    }
+}
     </style>
 </head>
 <body>
@@ -1705,7 +1890,7 @@
         <div class="about-grid">
             <div class="about-image-wrapper">
                 <div class="about-image">
-                    <span class="initials">AB</span>
+                    <img src="profile.png" alt="Akash Bhuniya">
                     <div class="deco deco-1"></div>
                     <div class="deco deco-2"></div>
                 </div>
@@ -1847,7 +2032,7 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-date">2023</div>
+                    <div class="timeline-date">2024</div>
                     <h3>Started BCA Journey</h3>
                     <p>Began my bachelor's in computer applications. Learned the basics of programming, logic building, and computational thinking.</p>
                 </div>
@@ -1855,7 +2040,7 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-date">2023</div>
+                    <div class="timeline-date">2024</div>
                     <h3>First Steps into Web Development</h3>
                     <p>Learned HTML, CSS, and JavaScript. Built my first static websites and started understanding responsive design.</p>
                 </div>
@@ -1863,7 +2048,7 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-date">2024</div>
+                    <div class="timeline-date">2025</div>
                     <h3>Dived into Backend & Databases</h3>
                     <p>Explored Java, Python, and MySQL. Built full stack projects with proper authentication and CRUD operations.</p>
                 </div>
@@ -1871,7 +2056,7 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-date">2024</div>
+                    <div class="timeline-date">2025</div>
                     <h3>Discovered UI/UX Design</h3>
                     <p>Started focusing on design principles, user research, and building interfaces that are both beautiful and functional.</p>
                 </div>
@@ -2585,6 +2770,49 @@ English, Hindi`;
         console.log('%cHey there, curious developer!', 'color: #3b82f6; font-size: 24px; font-weight: bold;');
         console.log('%cI see you poking around. I like that. Want to work together? Drop me a line at akash.bhuniya.dev@gmail.com', 'color: #94a3b8; font-size: 14px;');
         console.log('%cP.S. Try the Konami code: ↑ ↑ ↓ ↓ ← → ← → B A', 'color: #10b981; font-size: 12px; font-style: italic;');
+
+    hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 640) {
+            navLinks.classList.remove('open');
+        }
+    });
+});
+
+
+// ========== About Section Animation ==========
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const akashAbout = document.querySelector("#about");
+
+    if (!akashAbout) return;
+
+    const akashAboutObserver = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("about-visible");
+                    akashAboutObserver.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    akashAboutObserver.observe(akashAbout);
+
+});
     </script>
 </body>
 </html>
