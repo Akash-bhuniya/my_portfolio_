@@ -1,15 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akash Bhuniya | Full Stack Developer & UI/UX Designer</title>
-    <meta name="description" content="Akash Bhuniya - BCA Student, Full Stack Developer and UI/UX Designer. Building clean, functional, and user-friendly digital experiences.">
-    <meta name="keywords" content="Akash Bhuniya, Full Stack Developer, UI/UX Designer, BCA Student, Web Developer, Portfolio">
+    <meta name="description"
+        content="Akash Bhuniya - Full Stack Developer and UI/UX Designer. BCA Student building clean, functional, high-performance web applications and digital experiences.">
+    <meta name="keywords"
+        content="Akash Bhuniya, Full Stack Developer, UI/UX Designer, BCA Student, Web Developer, Portfolio, React, Node.js, Java, Python">
     <meta name="author" content="Akash Bhuniya">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Akash Bhuniya | Full Stack Developer & UI/UX Designer">
-    <meta property="og:description" content="BCA Student passionate about building clean, functional, and user-friendly digital experiences.">
+    <meta property="og:description"
+        content="BCA Student passionate about building clean, functional, and user-friendly digital experiences.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://akashbhuniya.dev">
     <meta name="twitter:card" content="summary_large_image">
@@ -17,10 +22,13 @@
     <meta name="twitter:description" content="Full Stack Developer & UI/UX Designer">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%233b82f6'/%3E%3Ctext x='50' y='65' font-family='Arial' font-size='50' font-weight='bold' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
 
+    <!-- Modern Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<<<<<<< HEAD:index.html
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1729,57 +1737,113 @@
     }
 }
     </style>
+=======
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+>>>>>>> 33e0034 (Updated portfolio website):Index.html
 </head>
-<body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="loader-text">AK</div>
-        <div class="loader-sub">Loading</div>
-    </div>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+    <!-- Ambient Gradient Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Interactive Particle / Starfield Background -->
+    <canvas id="starfield"></canvas>
+    <canvas id="confettiCanvas"></canvas>
 
     <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- Easter Egg Modal -->
-    <div class="easter-egg" id="easterEgg">
-        <h2>You found me!</h2>
-        <p>You're a curious one. Here's a virtual high-five for exploring.</p>
-        <p style="font-size: 3rem;">5</p>
-        <button onclick="document.getElementById('easterEgg').classList.remove('show')">Close</button>
+    <!-- Advanced Interactive Cyber Preloader -->
+    <div class="preloader" id="preloader" title="Click anywhere or press Space to speed up">
+        <canvas id="loaderCanvas"></canvas>
+        <div class="loader-hud-frame">
+            <span class="hud-corner hud-tl"></span>
+            <span class="hud-corner hud-tr"></span>
+            <span class="hud-corner hud-bl"></span>
+            <span class="hud-corner hud-br"></span>
+        </div>
+
+        <div class="loader-content" id="loaderContent">
+            <!-- 3D Gyroscope Hologram -->
+            <div class="holo-gyro">
+                <div class="gyro-ring gyro-1"></div>
+                <div class="gyro-ring gyro-2"></div>
+                <div class="gyro-ring gyro-3"></div>
+                <div class="gyro-center">
+                    <span class="gyro-initials">AK</span>
+                    <div class="gyro-pulse-ring"></div>
+                </div>
+            </div>
+
+            <!-- Digital Counter -->
+            <div class="loader-metrics">
+                <div class="loader-percent" id="loaderPercent">00%</div>
+                <div class="loader-system-msg" id="loaderSystemMsg">> INITIALIZING CORE MODULES...</div>
+            </div>
+
+            <!-- Futuristic Progress Track -->
+            <div class="cyber-progress-track">
+                <div class="cyber-progress-fill" id="cyberProgressFill"></div>
+            </div>
+
+            <!-- Interactive Speedup / Launch Pill -->
+            <button class="loader-skip-pill" id="loaderSkipBtn" title="Click or press Space to skip">
+                <span class="skip-icon">⚡</span>
+                <span class="skip-text">CLICK TO SPEED UP / PRESS SPACE</span>
+            </button>
+        </div>
     </div>
 
-    <!-- Navigation -->
+    <!-- Floating Navigation Bar -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">AKASH<span>.</span></div>
+            <a href="#home" class="logo" id="logoClicker" title="Akash Bhuniya">
+                AKASH<span>.</span>
+            </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div style="display: flex; gap: 10px; align-items: center;">
-                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-                    <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-                <a href="#" class="resume-btn" id="resumeBtn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <div class="nav-actions">
+                <button class="btn-resume-nav" id="btnOpenResume">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
                     Resume
-                </a>
-                <div class="hamburger" id="hamburger">
+                </button>
+                <button class="btn-nav-action" id="themeToggle" title="Toggle theme">
+                    <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
                     <span></span><span></span><span></span>
-                </div>
+                </button>
             </div>
         </div>
     </nav>
 
+<<<<<<< HEAD:index.html
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
@@ -1926,103 +1990,169 @@
             <div class="working-grid">
                 <div class="working-text">
                     <div class="working-status">
+=======
+    <!-- Main Content -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-grid">
+                <div class="hero-text-content">
+                    <div class="hero-availability">
+>>>>>>> 33e0034 (Updated portfolio website):Index.html
                         <span class="status-dot"></span>
-                        Currently Building
+                        Available for Full-time Roles & Internships
                     </div>
-                    <h3>A Full Stack Project Management Tool</h3>
-                    <p>I'm working on a modern task management app with real-time collaboration features, dark mode, and AI-powered suggestions for productivity.</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" data-progress="65"></div>
+                    <h1 class="hero-name">
+                        Hi, I'm <span class="gradient-text">Akash Bhuniya</span>
+                    </h1>
+                    <div class="hero-role-wrapper">
+                        <span>I build as a</span>
+                        <span class="typing-role" id="typingRole">Full Stack Developer</span>
                     </div>
-                    <div class="progress-label">
-                        <span>Progress</span>
-                        <span>65%</span>
+                    <p class="hero-bio">
+                        A BCA student and engineering enthusiast passionate about crafting fast, modern, and
+                        user-centric web applications. Combining clean full-stack code with thoughtful UI/UX and modern
+                        AI tooling.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <button class="btn btn-glass" id="heroResumeTrigger">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>View Resume</span>
+                        </button>
+                        <a href="#contact" class="btn btn-glass">
+                            <span>Get In Touch</span>
+                        </a>
                     </div>
-                </div>
-                <div class="working-visual">
-                    <div class="code-window">
-                        <div class="code-header">
-                            <span></span><span></span><span></span>
+                    <div class="hero-stats-row">
+                        <div class="stat-box">
+                            <strong data-target="10">10+</strong>
+                            <span>Technologies</span>
                         </div>
-                        <div class="code-content">
-                            <div><span class="keyword">const</span> <span class="variable">project</span> = {</div>
-                            <div>&nbsp;&nbsp;<span class="property">name</span>: <span class="string">"TaskFlow"</span>,</div>
-                            <div>&nbsp;&nbsp;<span class="property">stack</span>: [<span class="string">"React"</span>, <span class="string">"Node"</span>],</div>
-                            <div>&nbsp;&nbsp;<span class="property">status</span>: <span class="string">"in-progress"</span>,</div>
-                            <div>&nbsp;&nbsp;<span class="function">launch</span>: () =&gt; <span class="string">"soon"</span></div>
-                            <div>};</div>
-                            <div><span class="comment">// stay tuned</span></div>
+                        <div class="stat-box">
+                            <strong data-target="8">8+</strong>
+                            <span>Projects Built</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>BCA</strong>
+                            <span>Undergrad</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong data-target="100">100%</strong>
+                            <span>Commitment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual-card">
+                    <div class="profile-glow-halo"></div>
+                    <div class="profile-container">
+                        <div class="profile-img-wrap">
+                            <img id="heroProfileImg" src="avatar-3d.png" alt="Akash Bhuniya - 3D Developer Avatar">
+                        </div>
+                        <button class="avatar-toggle-btn" id="avatarToggleBtn" title="Toggle 3D Avatar / Real Photo">
+                            <span id="avatarToggleLabel">📷 Switch to Real Photo</span>
+                        </button>
+                    </div>
+
+                    <!-- Floating Badges -->
+                    <div class="float-badge badge-top-right">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <div class="badge-text">
+                            <strong>Full Stack</strong>
+                            <span>Web Architecture</span>
+                        </div>
+                    </div>
+
+                    <div class="float-badge badge-bottom-left">
+                        <div class="badge-icon" style="color: #06b6d4; background: rgba(6, 182, 212, 0.15);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+                            </svg>
+                        </div>
+                        <div class="badge-text">
+                            <strong>Clean UI/UX</strong>
+                            <span>Intuitive Design</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills -->
-    <section id="skills">
-        <div class="section-header">
-            <span class="section-label">What I Know</span>
-            <h2 class="section-title">Skills & Technologies</h2>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                </div>
-                <h3>Frontend Development</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Responsive</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path></svg>
-                </div>
-                <h3>Backend & Languages</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">DBMS</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14a9 3 0 0 0 18 0V5"></path><path d="M3 12a9 3 0 0 0 18 0"></path></svg>
-                </div>
-                <h3>Database</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">MySQL</span><span class="skill-tag">SQL</span><span class="skill-tag">Schema Design</span>
-                </div>
-            </div>
-               <div class="skill-card">
-                <div class="skill-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M6 9v6a6 6 0 0 0 6 6h0"></path><path d="M18 9V3"></path><path d="M18 9a6 6 0 0 0-6 6"></path></svg>
-                </div>
-                <h3>Version Control</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-                </div>
-                <h3>AI & Modern Tools</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">ChatGPT</span><span class="skill-tag">Claude</span><span class="skill-tag">Cursor</span><span class="skill-tag">Bolt</span><span class="skill-tag">Replit</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="10.5" r="2.5"></circle><circle cx="8.5" cy="7.5" r="2.5"></circle><circle cx="6.5" cy="12.5" r="2.5"></circle></svg>
-                </div>
-                <h3>UI/UX Design</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">UI Design</span><span class="skill-tag">UX Research</span><span class="skill-tag">Wireframing</span><span class="skill-tag">Prototyping</span>
-                </div>
+        <!-- TECH MARQUEE STRIP -->
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg> HTML5 &amp; CSS3</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    </svg> JavaScript (ES6+)</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    </svg> Java &amp; Python</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                        <path d="M3 5v14a9 3 0 0 0 18 0V5"></path>
+                    </svg> MySQL &amp; SQL</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="18" r="3"></circle>
+                        <circle cx="6" cy="6" r="3"></circle>
+                        <path d="M6 9v6a6 6 0 0 0 6 6h0"></path>
+                    </svg> Git &amp; GitHub</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    </svg> Responsive UI/UX</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a10 10 0 1 0 10 10"></path>
+                    </svg> Modern AI Tooling</div>
+                <!-- Duplicate for seamless infinite scroll -->
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg> HTML5 &amp; CSS3</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    </svg> JavaScript (ES6+)</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    </svg> Java &amp; Python</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                        <path d="M3 5v14a9 3 0 0 0 18 0V5"></path>
+                    </svg> MySQL &amp; SQL</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="18" r="3"></circle>
+                        <circle cx="6" cy="6" r="3"></circle>
+                        <path d="M6 9v6a6 6 0 0 0 6 6h0"></path>
+                    </svg> Git &amp; GitHub</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    </svg> Responsive UI/UX</div>
+                <div class="marquee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a10 10 0 1 0 10 10"></path>
+                    </svg> Modern AI Tooling</div>
             </div>
         </div>
-    </section>
 
+<<<<<<< HEAD:index.html
     <!-- Learning Timeline -->
     <section id="journey">
         <div class="section-header">
@@ -2080,411 +2210,1251 @@
             </div>
         </div>
     </section>
+=======
+        <!-- SERVICES SECTION -->
+        <section id="services">
+            <div class="section-header">
+                <span class="section-badge">Capabilities</span>
+                <h2 class="section-title">What I Bring to the Table</h2>
+                <p class="section-subtitle">
+                    End-to-end development capabilities from interactive frontend wireframes to scalable backend
+                    architectures.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card tilt-card">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Full Stack Web Apps</h3>
+                    <p>Architecting and building responsive, secure, and modern web applications with seamless frontend
+                        user experiences and solid backend services.</p>
+                    <div class="service-tags">
+                        <span>HTML/CSS</span><span>JavaScript</span><span>Java/Python</span><span>REST APIs</span>
+                    </div>
+                </div>
+>>>>>>> 33e0034 (Updated portfolio website):Index.html
 
-    <!-- Projects -->
-    <section id="projects">
-        <div class="section-header">
-            <span class="section-label">My Work</span>
-            <h2 class="section-title">Featured Projects</h2>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line></svg>
-                </div>
-                <div class="project-content">
-                    <h3>Personal Portfolio Website</h3>
-                    <p>A modern, responsive portfolio site built with HTML, CSS, and JavaScript featuring smooth animations and a clean professional design.</p>
-                    <div class="project-tech">
-                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                <div class="service-card tilt-card">
+                    <div class="service-icon-box" style="color: #06b6d4; background: rgba(6, 182, 212, 0.12);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
                     </div>
-                    <div class="project-links">
-                        <a href="#">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline></svg>
-                            Live Demo
-                        </a>
-                        <a href="#">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                            Source
-                        </a>
+                    <h3>UI/UX & Prototyping</h3>
+                    <p>Designing interfaces that users love. Clean visual hierarchies, design tokens, micro-animations,
+                        and wireframes tailored for optimal conversion.</p>
+                    <div class="service-tags">
+                        <span>Figma</span><span>Design
+                            Systems</span><span>Mobile-First</span><span>Micro-interactions</span>
                     </div>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                </div>
-                <div class="project-content">
-                    <h3>E-Commerce Web App</h3>
-                    <p>A full stack e-commerce platform with user authentication, product listing, cart functionality, and a MySQL database backend.</p>
-                    <div class="project-tech">
-                        <span>Java</span><span>MySQL</span><span>HTML/CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline></svg>
-                            Live Demo
-                        </a>
-                        <a href="#">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                            Source
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                </div>
-                <div class="project-content">
-                    <h3>Mobile App UI Design</h3>
-                    <p>A modern mobile interface design with focus on user experience, clean layouts, visual hierarchy, and intuitive interactions.</p>
-                    <div class="project-tech">
-                        <span>UI Design</span><span>UX Research</span><span>Prototyping</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                            View Design
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials">
-        <div class="section-header">
-            <span class="section-label">Kind Words</span>
-            <h2 class="section-title">What People Say</h2>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="quote-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
-                </div>
-                <p class="testimonial-text">"Akash is a fast learner with great attention to detail. His frontend work and design thinking stood out during our collaborative project. Highly recommend him."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">RS</div>
-                    <div class="author-info">
-                        <strong>Rohit Sharma</strong>
-                        <span>Senior Developer</span>
+                <div class="service-card tilt-card">
+                    <div class="service-icon-box" style="color: #8b5cf6; background: rgba(139, 92, 246, 0.12);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                    </div>
+                    <h3>Database & Backend Logic</h3>
+                    <p>Structuring relational databases, writing optimized queries, creating data models, and
+                        implementing business logic with authentication and security.</p>
+                    <div class="service-tags">
+                        <span>MySQL</span><span>Schema Design</span><span>CRUD</span><span>Optimization</span>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card">
-                <div class="quote-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
-                </div>
-                <p class="testimonial-text">"Working with Akash was a pleasure. He brings creativity, technical skill, and a positive attitude to every project. A truly dedicated developer."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar" style="background: linear-gradient(135deg, #10b981, #06b6d4);">PM</div>
-                    <div class="author-info">
-                        <strong>Priya Mishra</strong>
-                        <span>UI/UX Designer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="quote-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
-                </div>
-                <p class="testimonial-text">"Akash has shown exceptional growth as a developer. His ability to learn quickly and apply modern tools makes him stand out among his peers."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">AK</div>
-                    <div class="author-info">
-                        <strong>Dr. Anil Kumar</strong>
-                        <span>BCA Professor</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Blog -->
-    <section id="blog">
-        <div class="section-header">
-            <span class="section-label">Notes & Articles</span>
-            <h2 class="section-title">Latest from the Blog</h2>
-        </div>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <div class="blog-meta">
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21"<line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        Jan 15, 2025
-                    </span>
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        5 min read
-                    </span>
-                </div>
-                <h3>How I Use AI Tools to Code 2x Faster</h3>
-                <p>A practical guide on integrating AI tools like Claude and Cursor into your development workflow without losing the fundamentals.</p>
-                <a href="#">
-                    Read more
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <div class="section-header">
+                <span class="section-badge">Background</span>
+                <h2 class="section-title">Building with Purpose &amp; Intent</h2>
             </div>
-            <div class="blog-card">
-                <div class="blog-meta">
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        Jan 02, 2025
-                    </span>
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        7 min read
-                    </span>
-                </div>
-                <h3>Why Every Developer Should Learn UI/UX</h3>
-                <p>Understanding design principles doesn't just make you a better developer. It makes you a better problem solver. Here's why.</p>
-                <a href="#">
-                    Read more
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-            </div>
-            <div class="blog-card">
-                <div class="blog-meta">
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        Dec 18, 2024
-                    </span>
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        4 min read
-                    </span>
-                </div>
-                <h3>Building a Portfolio That Gets You Hired</h3>
-                <p>Lessons I learned building my own portfolio. The do's, the don'ts, and what actually makes recruiters stop scrolling.</p>
-                <a href="#">
-                    Read more
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-        <div class="section-header">
-            <span class="section-label">Get In Touch</span>
-            <h2 class="section-title">Let's work together</h2>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new ideas and opportunities.</p>
-                <div class="contact-item">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    </div>
-                    <div class="contact-item-text">
-                        <strong>Email</strong>
-                        <span>akash.bhuniya.dev@gmail.com</span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    </div>
-                    <div class="contact-item-text">
-                        <strong>Location</strong>
-                        <span>India</span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    </div>
-                    <div class="contact-item-text">
-                        <strong>Availability</strong>
-                        <span>Open to opportunities</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" title="GitHub">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
-                    <a href="#" title="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                    <a href="#" title="Twitter">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                    </a>
-                    <a href="mailto:akash.bhuniya.dev@gmail.com" title="Email">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="contact-form">
-                <div id="formMessage" class="form-message"></div>
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="Akash" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <div class="about-grid">
+                <div class="about-photo-wrapper">
+                    <div class="about-photo-card">
+                        <img src="profile.png" alt="Akash Bhuniya profile">
+                        <div class="exp-badge-card">
+                            <strong>BCA</strong>
+                            <span>Computer Applications<br>Active Scholar</span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+                </div>
 
-    <!-- Footer -->
+                <div class="about-content">
+                    <p>
+                        I'm Akash Bhuniya, an aspiring Software Engineer currently pursuing my Bachelor of Computer
+                        Applications (BCA). My journey combines a strong foundation in core computer science with a
+                        passion for modern digital craft.
+                    </p>
+                    <p>
+                        Whether designing intuitive interfaces or debugging database queries, I enjoy the entire product
+                        lifecycle. I actively leverage modern AI workflows, developer tools, and best engineering
+                        practices to build fast and deliver high-quality work.
+                    </p>
+
+                    <div class="highlights-grid">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                </svg>
+                            </div>
+                            <div class="highlight-text">
+                                <strong>BCA Student</strong>
+                                <span>Core CS Foundations</span>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                </svg>
+                            </div>
+                            <div class="highlight-text">
+                                <strong>Full Stack Developer</strong>
+                                <span>Front-to-Back Mastery</span>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+                                </svg>
+                            </div>
+                            <div class="highlight-text">
+                                <strong>UI/UX Enthusiast</strong>
+                                <span>Design Systems &amp; Feel</span>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"></path>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                            </div>
+                            <div class="highlight-text">
+                                <strong>Problem Solver</strong>
+                                <span>Algorithmic Thinking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Let's Connect</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRENTLY BUILDING / CODE PLAYGROUND -->
+        <section id="building">
+            <div class="workspace-card">
+                <div class="workspace-grid">
+                    <div class="workspace-info">
+                        <div class="hero-availability" style="margin-bottom: 14px;">
+                            <span class="status-dot"></span>
+                            Active In Development
+                        </div>
+                        <h3>TaskFlow: Full Stack Collaboration Suite</h3>
+                        <p>
+                            Developing an end-to-end task and project management ecosystem featuring real-time kanban
+                            updates, automated deadline tracking, team role permissions, and AI-powered productivity
+                            summaries.
+                        </p>
+
+                        <div class="progress-indicator">
+                            <div class="progress-header">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span>Sprint Completion</span>
+                                    <div class="live-activity-wave" title="Live sync activity">
+                                        <span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <span style="color: var(--primary); font-weight: 700;">70%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="skill-chip">React / Vanilla JS</span>
+                            <span class="skill-chip">Node.js Express</span>
+                            <span class="skill-chip">MySQL Database</span>
+                            <span class="skill-chip">Socket.IO</span>
+                        </div>
+                    </div>
+
+                    <div class="code-mockup">
+                        <div class="code-topbar">
+                            <div class="window-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <div class="code-tabs">
+                                <button class="tab-btn active" data-tab="taskflow">TaskFlow.ts</button>
+                                <button class="tab-btn" data-tab="schema">schema.sql</button>
+                                <button class="tab-btn" data-tab="ai">aiAssistant.py</button>
+                            </div>
+                        </div>
+                        <div class="code-body" id="codeDisplay">
+                            <div><span class="c-kw">interface</span> <span class="c-fn">ProjectEngine</span> {</div>
+                            <div>&nbsp;&nbsp;<span class="c-prop">title</span>: <span class="c-str">"TaskFlow
+                                    Workspace"</span>;</div>
+                            <div>&nbsp;&nbsp;<span class="c-prop">lead</span>: <span class="c-str">"Akash
+                                    Bhuniya"</span>;</div>
+                            <div>&nbsp;&nbsp;<span class="c-prop">techStack</span>: [<span class="c-str">"Node"</span>,
+                                <span class="c-str">"MySQL"</span>, <span class="c-str">"WebSockets"</span>];</div>
+                            <div>&nbsp;&nbsp;<span class="c-prop">completion</span>: <span class="c-num">0.70</span>;
+                            </div>
+                            <div>&nbsp;&nbsp;<span class="c-fn">deploy</span>(): <span
+                                    class="c-kw">Promise</span>&lt;<span class="c-str">"Production Live"</span>&gt;;
+                            </div>
+                            <div>}</div>
+                            <div><span class="c-com">// System initialized &amp; syncing state</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <div class="section-header text-center">
+                <span class="section-badge">Toolkit</span>
+                <h2 class="section-title">Technical Skills &amp; Proficiencies</h2>
+                <p class="section-subtitle">
+                    A comprehensive stack honed through academic rigor, practical projects, and continuous hands-on
+                    experimentation.
+                </p>
+            </div>
+
+            <div class="skills-filter-nav">
+                <button class="filter-btn active" data-skill-cat="all">All Stack</button>
+                <button class="filter-btn" data-skill-cat="frontend">Frontend</button>
+                <button class="filter-btn" data-skill-cat="backend">Backend &amp; Languages</button>
+                <button class="filter-btn" data-skill-cat="database">Database &amp; Tools</button>
+                <button class="filter-btn" data-skill-cat="design">UI/UX &amp; AI</button>
+            </div>
+
+            <div class="skills-cards-grid">
+                <div class="skill-box" data-cat="frontend">
+                    <div class="skill-box-top">
+                        <div class="skill-box-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <span class="skill-level-pill">Advanced</span>
+                    </div>
+                    <h4>Frontend Engineering</h4>
+                    <div class="skill-chip-list">
+                        <span class="skill-chip">HTML5 Semantic</span>
+                        <span class="skill-chip">CSS3 / Flex / Grid</span>
+                        <span class="skill-chip">Modern JavaScript</span>
+                        <span class="skill-chip">DOM Manipulation</span>
+                        <span class="skill-chip">Responsive Web</span>
+                    </div>
+                </div>
+
+                <div class="skill-box" data-cat="backend">
+                    <div class="skill-box-top">
+                        <div class="skill-box-icon" style="color: #06b6d4; background: rgba(6, 182, 212, 0.1);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            </svg>
+                        </div>
+                        <span class="skill-level-pill">Core Skills</span>
+                    </div>
+                    <h4>Programming Languages</h4>
+                    <div class="skill-chip-list">
+                        <span class="skill-chip">Java (OOP)</span>
+                        <span class="skill-chip">Python</span>
+                        <span class="skill-chip">C++ Foundations</span>
+                        <span class="skill-chip">Data Structures</span>
+                        <span class="skill-chip">Algorithms</span>
+                    </div>
+                </div>
+
+                <div class="skill-box" data-cat="database">
+                    <div class="skill-box-top">
+                        <div class="skill-box-icon" style="color: #8b5cf6; background: rgba(139, 92, 246, 0.1);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <span class="skill-level-pill">Proficient</span>
+                    </div>
+                    <h4>Databases &amp; Architecture</h4>
+                    <div class="skill-chip-list">
+                        <span class="skill-chip">MySQL</span>
+                        <span class="skill-chip">Relational SQL</span>
+                        <span class="skill-chip">Normalization</span>
+                        <span class="skill-chip">CRUD Operations</span>
+                        <span class="skill-chip">Query Indexing</span>
+                    </div>
+                </div>
+
+                <div class="skill-box" data-cat="database">
+                    <div class="skill-box-top">
+                        <div class="skill-box-icon" style="color: #10b981; background: rgba(16, 185, 129, 0.1);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="18" r="3"></circle>
+                                <circle cx="6" cy="6" r="3"></circle>
+                                <path d="M6 9v6a6 6 0 0 0 6 6h0"></path>
+                            </svg>
+                        </div>
+                        <span class="skill-level-pill">Daily Driver</span>
+                    </div>
+                    <h4>DevOps &amp; Tooling</h4>
+                    <div class="skill-chip-list">
+                        <span class="skill-chip">Git Version Control</span>
+                        <span class="skill-chip">GitHub Collaboration</span>
+                        <span class="skill-chip">VS Code</span>
+                        <span class="skill-chip">Chrome DevTools</span>
+                        <span class="skill-chip">CLI &amp; Shell</span>
+                    </div>
+                </div>
+
+                <div class="skill-box" data-cat="design">
+                    <div class="skill-box-top">
+                        <div class="skill-box-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+                            </svg>
+                        </div>
+                        <span class="skill-level-pill">Creative</span>
+                    </div>
+                    <h4>UI/UX Design</h4>
+                    <div class="skill-chip-list">
+                        <span class="skill-chip">Figma Wireframing</span>
+                        <span class="skill-chip">Design Tokens</span>
+                        <span class="skill-chip">Typography</span>
+                        <span class="skill-chip">Color Theory</span>
+                        <span class="skill-chip">User Empathy</span>
+                    </div>
+                </div>
+
+                <div class="skill-box" data-cat="design">
+                    <div class="skill-box-top">
+                        <div class="skill-box-icon" style="color: #ec4899; background: rgba(236, 72, 153, 0.1);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a10 10 0 1 0 10 10"></path>
+                            </svg>
+                        </div>
+                        <span class="skill-level-pill">Power User</span>
+                    </div>
+                    <h4>AI Workflows &amp; Productivity</h4>
+                    <div class="skill-chip-list">
+                        <span class="skill-chip">Claude / Anthropic</span>
+                        <span class="skill-chip">ChatGPT</span>
+                        <span class="skill-chip">Cursor IDE</span>
+                        <span class="skill-chip">Prompt Engineering</span>
+                        <span class="skill-chip">Rapid Prototyping</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SHOWCASE SECTION -->
+        <section id="projects">
+            <div class="section-header text-center">
+                <span class="section-badge">Portfolio</span>
+                <h2 class="section-title">Featured Works &amp; Projects</h2>
+                <p class="section-subtitle">
+                    A curated selection of real-world web applications, user experience mockups, and engineering
+                    experiments.
+                </p>
+            </div>
+
+            <div class="project-filter-bar">
+                <button class="proj-tab active" data-filter="all">All Projects <span class="count">4</span></button>
+                <button class="proj-tab" data-filter="fullstack">Full Stack <span class="count">2</span></button>
+                <button class="proj-tab" data-filter="frontend">Frontend <span class="count">1</span></button>
+                <button class="proj-tab" data-filter="uiux">UI/UX Design <span class="count">1</span></button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card tilt-card" data-category="fullstack">
+                    <div class="project-banner">
+                        <span class="project-category-tag">Full Stack</span>
+                        <div class="project-banner-decor">
+                            <div class="banner-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    <path d="M3 9h18M9 21V9"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <button class="project-quick-view" onclick="openProjectModal('taskflow')">Quick View</button>
+                    </div>
+                    <div class="project-body">
+                        <h3>TaskFlow: Project Management</h3>
+                        <p>A full-stack collaborative productivity dashboard with real-time kanban boards, task
+                            assignment, progress tracking, and MySQL persistence.</p>
+                        <div class="project-tech-tags">
+                            <span>React / JS</span><span>Node.js</span><span>MySQL</span><span>CSS3</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="project-btn project-btn-primary" onclick="openProjectModal('taskflow')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 14px; height: 14px;">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                </svg>
+                                Case Study
+                            </button>
+                            <a href="#contact" class="project-btn project-btn-ghost">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 14px; height: 14px;">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card tilt-card" data-category="fullstack">
+                    <div class="project-banner">
+                        <span class="project-category-tag">E-Commerce</span>
+                        <div class="project-banner-decor"
+                            style="background-image: radial-gradient(circle, rgba(6, 182, 212, 0.15) 1px, transparent 1px);">
+                            <div class="banner-icon"
+                                style="color: #06b6d4; background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.3);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <button class="project-quick-view" onclick="openProjectModal('ecommerce')">Quick View</button>
+                    </div>
+                    <div class="project-body">
+                        <h3>NovaCommerce Platform</h3>
+                        <p>Complete e-commerce web platform engineered with Java and MySQL database backend. Features
+                            secure user accounts, cart management, and inventory flow.</p>
+                        <div class="project-tech-tags">
+                            <span>Java</span><span>MySQL</span><span>HTML5</span><span>CSS Grid</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="project-btn project-btn-primary" onclick="openProjectModal('ecommerce')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 14px; height: 14px;">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                </svg>
+                                Case Study
+                            </button>
+                            <a href="#contact" class="project-btn project-btn-ghost">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 14px; height: 14px;">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card tilt-card" data-category="frontend">
+                    <div class="project-banner">
+                        <span class="project-category-tag">Frontend &amp; UI</span>
+                        <div class="project-banner-decor"
+                            style="background-image: radial-gradient(circle, rgba(139, 92, 246, 0.15) 1px, transparent 1px);">
+                            <div class="banner-icon"
+                                style="color: #8b5cf6; background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.3);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <button class="project-quick-view" onclick="openProjectModal('portfolio')">Quick View</button>
+                    </div>
+                    <div class="project-body">
+                        <h3>Modern Interactive Portfolio v2</h3>
+                        <p>Ultra-fast glassmorphic portfolio featuring responsive 3D card tilt, particle constellations,
+                            theme switcher, printable resume modal, and accessibility optimizations.</p>
+                        <div class="project-tech-tags">
+                            <span>HTML5</span><span>CSS Tokens</span><span>Vanilla JS</span><span>Canvas API</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="project-btn project-btn-primary" onclick="openProjectModal('portfolio')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 14px; height: 14px;">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                </svg>
+                                Case Study
+                            </button>
+                            <a href="#home" class="project-btn project-btn-ghost">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 14px; height: 14px;">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                </svg>
+                                Live Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card tilt-card" data-category="uiux">
+                    <div class="project-banner">
+                        <span class="project-category-tag">UI/UX Design</span>
+                        <div class="project-banner-decor"
+                            style="background-image: radial-gradient(circle, rgba(245, 158, 11, 0.15) 1px, transparent 1px);">
+                            <div class="banner-icon"
+                                style="color: #f59e0b; background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <button class="project-quick-view" onclick="openProjectModal('mobileui')">Quick View</button>
+                    </div>
+                    <div class="project-body">
+                        <h3>Pulse Mobile App Experience</h3>
+                        <p>Modern mobile application prototype focusing on user retention, ergonomic thumb reach, dark
+                            mode elegance, and intuitive checkout micro-interactions.</p>
+                        <div class="project-tech-tags">
+                            <span>Figma</span><span>Design System</span><span>Prototyping</span><span>UX Flow</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="project-btn project-btn-primary" onclick="openProjectModal('mobileui')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 14px; height: 14px;">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                </svg>
+                                Case Study
+                            </button>
+                            <a href="#contact" class="project-btn project-btn-ghost">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 14px; height: 14px;">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Specs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOURNEY / LEARNING MILESTONES -->
+        <section id="journey">
+            <div class="section-header text-center">
+                <span class="section-badge">Milestones</span>
+                <h2 class="section-title">My Learning Evolution</h2>
+                <p class="section-subtitle">
+                    How every semester and coding sprint transformed foundational curiosity into full-stack
+                    craftsmanship.
+                </p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="timeline-progress-line" id="timelineProgressLine"></div>
+                <div class="timeline-block">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2024</span>
+                        <h4>Started BCA Journey</h4>
+                        <p>Commenced bachelor's in computer applications. Built solid mental models in computing, logic
+                            systems, algorithms, and computational thinking.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2024</span>
+                        <h4>Web Foundations Mastery</h4>
+                        <p>Mastered modern semantic HTML, CSS layout systems (Flexbox &amp; Grid), and vanilla
+                            JavaScript. Began building responsive, mobile-first web pages.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2025</span>
+                        <h4>Backend Systems &amp; Relational DBs</h4>
+                        <p>Expanded into Java, Python, and MySQL. Learned RESTful principles, relational normalization,
+                            schema design, and secure authentication flows.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2025</span>
+                        <h4>UI/UX &amp; Modern AI Acceleration</h4>
+                        <p>Incorporated design thinking, Figma wireframing, and cutting-edge AI dev tools (Claude,
+                            Cursor, ChatGPT) into daily development workflows.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">Present</span>
+                        <h4>Shipping Full Stack Products</h4>
+                        <p>Actively engineering production-grade web applications, participating in hackathons, and
+                            preparing for high-impact developer roles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS / ENDORSEMENTS -->
+        <section id="testimonials">
+            <div class="section-header text-center">
+                <span class="section-badge">Endorsements</span>
+                <h2 class="section-title">What Collaborators Say</h2>
+                <p class="section-subtitle">
+                    Feedback from peers, senior developers, and academic mentors on my work ethic and technical
+                    abilities.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars-row">
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <p class="testimonial-quote">
+                        "Akash is an exceptionally fast learner with keen attention to detail. His front-end work and
+                        design thinking stood out during our team project. He's proactive, self-directed, and reliable."
+                    </p>
+                    <div class="author-row">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">RS
+                        </div>
+                        <div class="author-details">
+                            <strong>Rohit Sharma</strong>
+                            <span>Senior Full Stack Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars-row">
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <p class="testimonial-quote">
+                        "Working with Akash was a delight. He balances clean aesthetics with solid engineering logic. He
+                        asks the right UX questions before writing code, saving countless design iterations."
+                    </p>
+                    <div class="author-row">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #10b981, #06b6d4);">PM
+                        </div>
+                        <div class="author-details">
+                            <strong>Priya Mishra</strong>
+                            <span>UI/UX Product Designer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars-row">
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <p class="testimonial-quote">
+                        "Akash demonstrates exceptional analytical maturity. His eagerness to delve beyond syllabus
+                        boundaries into modern tools and frameworks sets him apart as an exemplary student."
+                    </p>
+                    <div class="author-row">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">AK
+                        </div>
+                        <div class="author-details">
+                            <strong>Dr. Anil Kumar</strong>
+                            <span>Computer Applications Faculty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG / INSIGHTS -->
+        <section id="blog">
+            <div class="section-header">
+                <span class="section-badge">Articles</span>
+                <h2 class="section-title">Thoughts &amp; Technical Insights</h2>
+                <p class="section-subtitle">
+                    Practical takeaways from my development sprints, architecture experiments, and design process.
+                </p>
+            </div>
+
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-badge">Workflow</span>
+                        <span>5 min read</span>
+                    </div>
+                    <h3>How I Use AI Tools to Code 2x Faster</h3>
+                    <p>A pragmatic guide on integrating modern AI pair-programmers like Claude and Cursor into your
+                        workflow without sacrificing deep understanding of fundamentals.</p>
+                    <a href="#contact" class="blog-read-link">
+                        <span>Read article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            style="width: 15px; height: 15px;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-badge">UI/UX Strategy</span>
+                        <span>7 min read</span>
+                    </div>
+                    <h3>Why Every Software Developer Should Learn UI/UX</h3>
+                    <p>Understanding user experience principles makes you a significantly sharper engineer. Here is how
+                        visual hierarchy and design tokens elevate code quality.</p>
+                    <a href="#contact" class="blog-read-link">
+                        <span>Read article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            style="width: 15px; height: 15px;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-badge">Career &amp; Craft</span>
+                        <span>4 min read</span>
+                    </div>
+                    <h3>Building a Portfolio That Actually Impresses</h3>
+                    <p>Lessons learned while designing and coding this portfolio: why performance, interaction details,
+                        and proof of work beat generic templates every time.</p>
+                    <a href="#contact" class="blog-read-link">
+                        <span>Read article</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            style="width: 15px; height: 15px;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="section-header">
+                <span class="section-badge">Get In Touch</span>
+                <h2 class="section-title">Let's Build Something Exceptional</h2>
+                <p class="section-subtitle">
+                    Have an internship opportunity, a project proposal, or just want to connect? My inbox is always
+                    open.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-panel">
+                    <h3>Contact Information</h3>
+                    <p>
+                        Feel free to drop a message through the form or reach out directly via email. I respond
+                        promptly!
+                    </p>
+
+                    <div class="contact-item-row">
+                        <div class="contact-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong>Direct Email</strong>
+                            <span>akash.bhuniya.dev@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-row">
+                        <div class="contact-icon-wrap" style="color: #06b6d4; background: rgba(6, 182, 212, 0.12);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong>Location</strong>
+                            <span>India (Open to Remote Globally)</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-row">
+                        <div class="contact-icon-wrap" style="color: #10b981; background: rgba(16, 185, 129, 0.12);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong>Availability</strong>
+                            <span>Open for Full-time Roles &amp; Freelance</span>
+                        </div>
+                    </div>
+
+                    <div class="social-strip">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                            title="GitHub Profile">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                            title="LinkedIn Profile">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:akash.bhuniya.dev@gmail.com" class="social-btn" title="Send Direct Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-panel">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-input"
+                                    placeholder="e.g. Rahul Sharma" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" class="form-input"
+                                    placeholder="e.g. rahul@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input"
+                                placeholder="Project Inquiry / Job Opportunity" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Tell me about your project, timeline, or open role..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span>Send Message</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">AKASH<span>.</span></div>
-                    <p>A passionate full stack developer and UI/UX designer crafting clean, functional digital experiences. Always learning, always building.</p>
-                    <div class="social-links">
-                        <a href="#" title="GitHub">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                        <a href="#" title="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        <a href="#" title="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>More</h4>
-                    <ul>
-                        <li><a href="#journey">Journey</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:akash.bhuniya.dev@gmail.com">Email Me</a></li>
-                        <li><a href="#" id="footerResume">Resume</a></li>
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo">AKASH<span>.</span></a>
+                <p>
+                    Full Stack Developer &amp; UI/UX Designer. BCA student focused on building fast, reliable, and
+                    aesthetically delightful digital products.
+                </p>
+                <div class="social-strip">
+                    <a href="https://github.com/Akash-bhuniya" target="_blank" rel="noopener noreferrer" class="social-btn"><svg
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg></a>
+                    <a href="https://linkedin.com/in/akash-bhuniya-6585b7352" target="_blank" rel="noopener noreferrer" class="social-btn"><svg
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 <strong>Akash Bhuniya</strong>. Designed &amp; built with <span class="heart">care</span> and lots of coffee.</p>
-                <a href="#home" class="back-to-top">Back to top ↑</a>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Portfolio</h4>
+                <ul>
+                    <li><a href="#projects">Featured Work</a></li>
+                    <li><a href="#journey">Journey Timeline</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#blog">Articles &amp; Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Actions</h4>
+                <ul>
+                    <li><a href="mailto:akash.bhuniya.dev@gmail.com">Direct Email</a></li>
+                    <li><a href="javascript:void(0)" onclick="openResumeModal()">View Resume</a></li>
+                    <li><a href="#contact">Hire Me</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                &copy; <span id="currentYear">2025</span> <strong>Akash Bhuniya</strong>. Designed &amp; engineered with
+                precision.
+            </div>
+            <div>
+                <a href="#home" style="color: var(--primary); text-decoration: none; font-weight: 600;">Back to top
+                    &uarr;</a>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top -->
-    <button class="scroll-top" id="scrollTop" title="Back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    <!-- SCROLL TO TOP FLOATING BUTTON -->
+    <button class="btn-scroll-top" id="scrollTopBtn" title="Back to top" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            style="width: 20px; height: 20px;">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
     </button>
 
-    <script>
-        // ========== Preloader ==========
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('preloader').classList.add('hidden');
-            }, 800);
-        });
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
 
-        // ========== Scroll Progress Bar ==========
-        const scrollProgress = document.getElementById('scrollProgress');
-        const navbar = document.getElementById('navbar');
-        const scrollTopBtn = document.getElementById('scrollTop');
+    <!-- RESUME MODAL -->
+    <div class="modal-overlay" id="resumeModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title">Professional Resume &bull; Akash Bhuniya</div>
+                <button class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 18px; height: 18px;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="resume-paper" id="resumePaper">
+                    <h1>AKASH BHUNIYA</h1>
+                    <div class="res-subtitle">Full Stack Developer &amp; UI/UX Designer &bull; BCA Scholar</div>
+                    <div class="res-contact-bar">
+                        <span>Email: akash.bhuniya.dev@gmail.com</span>
+                        <span>Location: India</span>
+                        <span>Portfolio: akashbhuniya.dev</span>
+                        <span>Status: Open to Full-Time / Internship Opportunities</span>
+                    </div>
 
-        window.addEventListener('scroll', () => {
-            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            scrollProgress.style.width = scrolled + '%';
+                    <div class="resume-section">
+                        <h2>Professional Summary</h2>
+                        <p style="font-size: 0.92rem; color: #334155; line-height: 1.65;">
+                            Motivated and results-driven BCA student and Full Stack Developer with strong foundations in
+                            software engineering, frontend UI/UX design, and relational database management. Experienced
+                            in building end-to-end web applications with clean code, modern JavaScript, Java, Python,
+                            and MySQL. Adept at leveraging modern AI-assisted workflows to accelerate development and
+                            ship polished products.
+                        </p>
+                    </div>
 
-            if (window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
+                    <div class="resume-section">
+                        <h2>Technical Skills</h2>
+                        <ul class="res-list">
+                            <li><strong>Languages:</strong> JavaScript (ES6+), Java, Python, C++, HTML5, CSS3, SQL</li>
+                            <li><strong>Frameworks &amp; Web Tech:</strong> React principles, Node.js basics, RESTful
+                                APIs, DOM APIs, Responsive CSS Grid/Flexbox</li>
+                            <li><strong>Databases &amp; Systems:</strong> MySQL, Relational Database Modeling, Schema
+                                Normalization, CRUD</li>
+                            <li><strong>Developer Tools:</strong> Git, GitHub, VS Code, Chrome DevTools, CLI, Postman
+                            </li>
+                            <li><strong>Design &amp; AI:</strong> UI/UX Prototyping, Figma, Wireframing, Claude,
+                                ChatGPT, Cursor IDE</li>
+                        </ul>
+                    </div>
 
-            if (window.scrollY > 300) scrollTopBtn.classList.add('show');
-            else scrollTopBtn.classList.remove('show');
-        });
+                    <div class="resume-section">
+                        <h2>Featured Projects</h2>
+                        <div style="margin-bottom: 12px;">
+                            <div class="res-item-header">
+                                <span>TaskFlow &bull; Full Stack Project Management Tool</span>
+                                <span style="font-weight: 500; font-size: 0.85rem; color: #64748b;">2025</span>
+                            </div>
+                            <div class="res-item-sub">Tech: JavaScript, Node.js, Express, MySQL, CSS3</div>
+                            <ul class="res-list">
+                                <li>Engineered collaborative kanban workspace allowing users to organize tasks, assign
+                                    priorities, and track milestones.</li>
+                                <li>Implemented relational schema in MySQL for users, boards, tasks, and activity logs
+                                    with query optimizations.</li>
+                            </ul>
+                        </div>
 
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+                        <div style="margin-bottom: 12px;">
+                            <div class="res-item-header">
+                                <span>NovaCommerce &bull; E-Commerce Web Application</span>
+                                <span style="font-weight: 500; font-size: 0.85rem; color: #64748b;">2024 - 2025</span>
+                            </div>
+                            <div class="res-item-sub">Tech: Java, MySQL, HTML5, CSS3, JavaScript</div>
+                            <ul class="res-list">
+                                <li>Developed multi-page e-commerce application with user session authentication and
+                                    persistent shopping cart flow.</li>
+                                <li>Architected database tables handling inventory, user profiles, and order status
+                                    lifecycle.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        // ========== Custom Cursor ==========
-        const cursor = document.getElementById('cursor');
-        const cursorRing = document.getElementById('cursorRing');
+                    <div class="resume-section">
+                        <h2>Education</h2>
+                        <div class="res-item-header">
+                            <span>Bachelor of Computer Applications (BCA)</span>
+                            <span style="font-weight: 500; font-size: 0.85rem; color: #64748b;">Pursuing</span>
+                        </div>
+                        <div class="res-item-sub">Coursework: Data Structures &amp; Algorithms, Database Management
+                            Systems, OOP, Web Technologies</div>
+                    </div>
+                </div>
 
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX - 4 + 'px';
-            cursor.style.top = e.clientY - 4 + 'px';
-            cursorRing.style.left = e.clientX - 17.5 + 'px';
-            cursorRing.style.top = e.clientY - 17.5 + 'px';
-        });
+                <div class="modal-action-bar">
+                    <button class="btn btn-glass" onclick="downloadResumeText()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            style="width: 16px; height: 16px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Text File
+                    </button>
+                    <button class="btn btn-primary" onclick="window.print()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            style="width: 16px; height: 16px;">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        Print / Save as PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        document.querySelectorAll('a, button, .skill-card, .project-card, .service-card, .testimonial-card, .blog-card, .info-item, .contact-item, .marquee-item').forEach(el => {
-            el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
-        });
+    <!-- PROJECT CASE STUDY MODAL -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title" id="projModalTitle">Project Case Study</div>
+                <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 18px; height: 18px;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="projModalContent">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
 
-        // ========== Theme Toggle ==========
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const savedTheme = localStorage.getItem('theme');
+    <!-- AI CHATBOT WIDGET -->
+    <div class="chatbot-widget-container">
+        <!-- Floating Chatbot Trigger Button -->
+        <button class="chatbot-trigger" id="chatbotTrigger" title="Chat with Akash's AI Assistant"
+            aria-label="Open AI Chatbot">
+            <div class="chatbot-trigger-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+            </div>
+            <span class="chatbot-status-beacon"></span>
+        </button>
 
-        if (savedTheme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-        }
+        <!-- Chat Window -->
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar-wrap">
+                    <div class="chatbot-avatar">🤖</div>
+                    <span class="online-indicator"></span>
+                </div>
+                <div class="chatbot-header-info">
+                    <strong>Akash AI Assistant</strong>
+                    <span>Ask me anything about Akash</span>
+                </div>
+                <button class="chatbot-close-btn" id="chatbotCloseBtn" title="Close Chat">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 16px; height: 16px;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
 
-        themeToggle.addEventListener('click', () => {
-            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-            if (isLight) {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-            }
-        });
+            <div class="chatbot-body" id="chatbotBody">
+                <div class="chat-message bot">
+                    <div class="chat-bubble">
+                        👋 Hi there! I'm <strong>Akash's AI Assistant</strong>. How can I help you today?
+                    </div>
+                </div>
 
-        // ========== Resume Download ==========
-        const resumeText = `AKASH BHUNIYA
-Full Stack Developer | UI/UX Designer
-Email: akash.bhuniya.dev@gmail.com | Location: India
+                <div class="chat-suggestions" id="chatSuggestions">
+                    <button class="suggestion-chip" onclick="sendSuggestedQuery('Tell me about Akash')">👋 About
+                        Akash</button>
+                    <button class="suggestion-chip" onclick="sendSuggestedQuery('What are his projects?')">💻
+                        Projects</button>
+                    <button class="suggestion-chip" onclick="sendSuggestedQuery('What is his tech stack?')">🛠️ Tech
+                        Stack</button>
+                    <button class="suggestion-chip" onclick="sendSuggestedQuery('How can I contact him?')">📧 Contact
+                        Info</button>
+                    <button class="suggestion-chip" onclick="sendSuggestedQuery('Show resume')">📄 View Resume</button>
+                </div>
+            </div>
 
-ABOUT
-BCA student passionate about building clean, functional, and user-friendly digital experiences. Full stack developer with strong UI/UX design skills.
+            <form class="chatbot-input-bar" id="chatbotForm">
+                <input type="text" id="chatInput" placeholder="Ask about skills, projects, resume..." autocomplete="off"
+                    required>
+                <button type="submit" id="chatSendBtn" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 16px; height: 16px;">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
 
+<<<<<<< HEAD:index.html
 SKILLS
 - Frontend: HTML5, CSS3, JavaScript, Responsive Design
 - Backend: Java, Python, C++
@@ -2814,5 +3784,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
     </script>
+=======
+    <!-- JAVASCRIPT LOGIC -->
+    <script src="script.js"></script>
+>>>>>>> 33e0034 (Updated portfolio website):Index.html
 </body>
+
 </html>
