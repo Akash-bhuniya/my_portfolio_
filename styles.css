@@ -3450,3 +3450,56 @@ button,a{touch-action:manipulation}
 @media(prefers-reduced-motion:reduce){
   .toast,.toast-leaving,.toast-progress{animation:none!important}
 }
+
+
+/* ==========================================================
+   MOBILE NAV MENU LAYER FIX — keep menu above hero content
+   ========================================================== */
+@media (max-width:768px){
+  nav{
+    z-index:99990!important;
+    isolation:isolate;
+    overflow:visible!important;
+  }
+  main{
+    position:relative;
+    z-index:1!important;
+  }
+  .nav-links{
+    position:fixed!important;
+    top:calc(64px + 10px)!important;
+    left:12px!important;
+    right:12px!important;
+    width:auto!important;
+    max-width:none!important;
+    max-height:calc(100dvh - 88px)!important;
+    overflow-y:auto!important;
+    background:rgba(9,15,29,.995)!important;
+    background-color:#0b1426!important;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    z-index:99999!important;
+    isolation:isolate;
+    box-shadow:0 22px 60px rgba(0,0,0,.62),0 0 0 1px rgba(125,160,230,.12);
+    border:1px solid rgba(125,160,230,.2)!important;
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+  }
+  .nav-links.open{
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:translateY(0)!important;
+  }
+  .nav-links li,.nav-links a{position:relative;z-index:1}
+  .nav-links a{color:#d9e5f8!important}
+  .nav-links a.active{color:#fff!important;background:rgba(59,130,246,.18)!important}
+  [data-theme="light"] .nav-links{
+    background:rgba(249,251,255,.995)!important;
+    background-color:#f9fbff!important;
+    box-shadow:0 22px 60px rgba(30,48,80,.24);
+  }
+  [data-theme="light"] .nav-links a{color:#263650!important}
+  [data-theme="light"] .nav-links a.active{color:#10264a!important}
+}
