@@ -103,6 +103,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#tools">Tools</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#journey">Journey</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
@@ -119,6 +120,12 @@
                     </svg>
                     Resume
                 </button>
+                <a class="btn-nav-action admin-portal-link" href="admin/" aria-label="Open admin portal" title="Admin portal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 3 20 6v5.5c0 5-3.4 8-8 9.5-4.6-1.5-8-4.5-8-9.5V6l8-3Z"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </a>
                 <button class="btn-nav-action" id="themeToggle" title="Toggle theme">
                     <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -446,81 +453,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- CURRENTLY BUILDING / CODE PLAYGROUND -->
-        <section id="building">
-            <div class="workspace-card">
-                <div class="workspace-grid">
-                    <div class="workspace-info">
-                        <div class="hero-availability" style="margin-bottom: 14px;">
-                            <span class="status-dot"></span>
-                            Active In Development
-                        </div>
-                        <h3>TaskFlow: Full Stack Collaboration Suite</h3>
-                        <p>
-                            Developing an end-to-end task and project management ecosystem featuring real-time kanban
-                            updates, automated deadline tracking, team role permissions, and AI-powered productivity
-                            summaries.
-                        </p>
-
-                        <div class="progress-indicator">
-                            <div class="progress-header">
-                                <div style="display: flex; align-items: center; gap: 8px;">
-                                    <span>Sprint Completion</span>
-                                    <div class="live-activity-wave" title="Live sync activity">
-                                        <span></span><span></span><span></span><span></span>
-                                    </div>
-                                </div>
-                                <span style="color: var(--primary); font-weight: 700;">70%</span>
-                            </div>
-                            <div class="progress-track">
-                                <div class="progress-fill"></div>
-                            </div>
-                        </div>
-
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                            <span class="skill-chip">React / Vanilla JS</span>
-                            <span class="skill-chip">Node.js Express</span>
-                            <span class="skill-chip">MySQL Database</span>
-                            <span class="skill-chip">Socket.IO</span>
-                        </div>
-                    </div>
-
-                    <div class="code-mockup">
-                        <div class="code-topbar">
-                            <div class="window-dots">
-                                <span class="dot dot-red"></span>
-                                <span class="dot dot-yellow"></span>
-                                <span class="dot dot-green"></span>
-                            </div>
-                            <div class="code-tabs">
-                                <button class="tab-btn active" data-tab="taskflow">TaskFlow.ts</button>
-                                <button class="tab-btn" data-tab="schema">schema.sql</button>
-                                <button class="tab-btn" data-tab="ai">aiAssistant.py</button>
-                            </div>
-                        </div>
-                        <div class="code-body" id="codeDisplay">
-                            <div><span class="c-kw">interface</span> <span class="c-fn">ProjectEngine</span> {</div>
-                            <div>&nbsp;&nbsp;<span class="c-prop">title</span>: <span class="c-str">"TaskFlow
-                                    Workspace"</span>;</div>
-                            <div>&nbsp;&nbsp;<span class="c-prop">lead</span>: <span class="c-str">"Akash
-                                    Bhuniya"</span>;</div>
-                            <div>&nbsp;&nbsp;<span class="c-prop">techStack</span>: [<span class="c-str">"Node"</span>,
-                                <span class="c-str">"MySQL"</span>, <span class="c-str">"WebSockets"</span>];</div>
-                            <div>&nbsp;&nbsp;<span class="c-prop">completion</span>: <span class="c-num">0.70</span>;
-                            </div>
-                            <div>&nbsp;&nbsp;<span class="c-fn">deploy</span>(): <span
-                                    class="c-kw">Promise</span>&lt;<span class="c-str">"Production Live"</span>&gt;;
-                            </div>
-                            <div>}</div>
-                            <div><span class="c-com">// System initialized &amp; syncing state</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS SECTION -->
+<!-- SKILLS SECTION -->
         <section id="skills">
             <div class="section-header text-center">
                 <span class="section-badge">Toolkit</span>
@@ -860,73 +793,22 @@
                 </div>
             </div>
         </section>
-
-        <!-- JOURNEY / LEARNING MILESTONES -->
-        <section id="journey">
+        <!-- COMPACT JOURNEY / MILESTONES -->
+        <section id="journey" class="journey-section">
             <div class="section-header text-center">
-                <span class="section-badge">Milestones</span>
-                <h2 class="section-title">My Learning Evolution</h2>
-                <p class="section-subtitle">
-                    How every semester and coding sprint transformed foundational curiosity into full-stack
-                    craftsmanship.
-                </p>
+                <span class="section-badge">The Journey</span>
+                <h2 class="section-title">Learning by Building</h2>
+                <p class="section-subtitle">A few milestones that shaped my path into software development.</p>
             </div>
-
-            <div class="timeline-wrapper">
-                <div class="timeline-progress-line" id="timelineProgressLine"></div>
-                <div class="timeline-block">
-                    <div class="timeline-node"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-year">2024</span>
-                        <h4>Started BCA Journey</h4>
-                        <p>Commenced bachelor's in computer applications. Built solid mental models in computing, logic
-                            systems, algorithms, and computational thinking.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-block">
-                    <div class="timeline-node"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-year">2024</span>
-                        <h4>Web Foundations Mastery</h4>
-                        <p>Mastered modern semantic HTML, CSS layout systems (Flexbox &amp; Grid), and vanilla
-                            JavaScript. Began building responsive, mobile-first web pages.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-block">
-                    <div class="timeline-node"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-year">2025</span>
-                        <h4>Backend Systems &amp; Relational DBs</h4>
-                        <p>Expanded into Java, Python, and MySQL. Learned RESTful principles, relational normalization,
-                            schema design, and secure authentication flows.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-block">
-                    <div class="timeline-node"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-year">2025</span>
-                        <h4>UI/UX &amp; Modern AI Acceleration</h4>
-                        <p>Incorporated design thinking, Figma wireframing, and cutting-edge AI dev tools (Claude,
-                            Cursor, ChatGPT) into daily development workflows.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-block">
-                    <div class="timeline-node"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-year">Present</span>
-                        <h4>Shipping Full Stack Products</h4>
-                        <p>Actively engineering production-grade web applications, participating in hackathons, and
-                            preparing for high-impact developer roles.</p>
-                    </div>
-                </div>
+            <div class="timeline-wrapper journey-compact" aria-label="Learning milestones">
+                <article class="timeline-block"><div class="timeline-node"></div><div class="timeline-card"><span class="timeline-year">2024</span><h4>BCA Foundations</h4><p>Started my computer applications degree and built a foundation in programming and computer science.</p></div></article>
+                <article class="timeline-block"><div class="timeline-node"></div><div class="timeline-card"><span class="timeline-year">2024</span><h4>Web Development</h4><p>Started building responsive interfaces with HTML, CSS and JavaScript.</p></div></article>
+                <article class="timeline-block"><div class="timeline-node"></div><div class="timeline-card"><span class="timeline-year">2025</span><h4>Backend &amp; Databases</h4><p>Expanded into Java, Python, SQL and relational database workflows.</p></div></article>
+                <article class="timeline-block"><div class="timeline-node"></div><div class="timeline-card"><span class="timeline-year">2025</span><h4>Product &amp; AI Tools</h4><p>Explored interface design, prototyping and AI-assisted development tools.</p></div></article>
+                <article class="timeline-block"><div class="timeline-node"></div><div class="timeline-card"><span class="timeline-year">2026</span><h4>Projects &amp; Internship</h4><p>Applying my skills to practical software projects and industry-oriented work.</p></div></article>
             </div>
         </section>
-
-        <!-- TESTIMONIALS / ENDORSEMENTS -->
+<!-- TESTIMONIALS / ENDORSEMENTS -->
         <section id="testimonials">
             <div class="section-header text-center">
                 <span class="section-badge">Endorsements</span>
@@ -1065,75 +947,37 @@
                 </div>
             </div>
         </section>
-
-        <!-- BLOG / INSIGHTS -->
-        <section id="blog">
-            <div class="section-header">
-                <span class="section-badge">Articles</span>
-                <h2 class="section-title">Thoughts &amp; Technical Insights</h2>
-                <p class="section-subtitle">
-                    Practical takeaways from my development sprints, architecture experiments, and design process.
-                </p>
+        <!-- TOOLS SECTION: CMS replaces this fallback with managed content when connected -->
+        <section id="tools" aria-label="Tools I use">
+            <div class="section-header text-center">
+                <span class="section-badge">My Workflow</span>
+                <h2 class="section-title">Tools I Use</h2>
+                <p class="section-subtitle">AI assistants, development platforms and creative tools in my workflow.</p>
             </div>
-
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-meta-row">
-                        <span class="blog-badge">Workflow</span>
-                        <span>5 min read</span>
-                    </div>
-                    <h3>How I Use AI Tools to Code 2x Faster</h3>
-                    <p>A pragmatic guide on integrating modern AI pair-programmers like Claude and Cursor into your
-                        workflow without sacrificing deep understanding of fundamentals.</p>
-                    <a href="#contact" class="blog-read-link">
-                        <span>Read article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            style="width: 15px; height: 15px;">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-meta-row">
-                        <span class="blog-badge">UI/UX Strategy</span>
-                        <span>7 min read</span>
-                    </div>
-                    <h3>Why Every Software Developer Should Learn UI/UX</h3>
-                    <p>Understanding user experience principles makes you a significantly sharper engineer. Here is how
-                        visual hierarchy and design tokens elevate code quality.</p>
-                    <a href="#contact" class="blog-read-link">
-                        <span>Read article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            style="width: 15px; height: 15px;">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-meta-row">
-                        <span class="blog-badge">Career &amp; Craft</span>
-                        <span>4 min read</span>
-                    </div>
-                    <h3>Building a Portfolio That Actually Impresses</h3>
-                    <p>Lessons learned while designing and coding this portfolio: why performance, interaction details,
-                        and proof of work beat generic templates every time.</p>
-                    <a href="#contact" class="blog-read-link">
-                        <span>Read article</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            style="width: 15px; height: 15px;">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
+            <div class="tool-category-list">
+                <div class="tool-category"><h3>AI Assistants</h3><div class="tool-logo-grid">
+                    <a class="tool-logo-card" href="https://chatgpt.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT logo" loading="lazy"></span><strong>ChatGPT</strong></a>
+                    <a class="tool-logo-card" href="https://claude.ai" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/claude" alt="Claude logo" loading="lazy"></span><strong>Claude</strong></a>
+                    <a class="tool-logo-card" href="https://gemini.google.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/googlegemini" alt="Gemini logo" loading="lazy"></span><strong>Gemini</strong></a>
+                    <a class="tool-logo-card" href="https://www.canva.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/canva" alt="Canva logo" loading="lazy"></span><strong>Canva</strong></a>
+                </div></div>
+                <div class="tool-category"><h3>AI Development</h3><div class="tool-logo-grid">
+                    <a class="tool-logo-card" href="https://antigravity.google" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://www.google.com/s2/favicons?domain=antigravity.google&amp;sz=128" alt="Antigravity logo" loading="lazy"></span><strong>Antigravity</strong></a>
+                    <a class="tool-logo-card" href="https://cursor.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/cursor" alt="Cursor logo" loading="lazy"></span><strong>Cursor</strong></a>
+                    <a class="tool-logo-card" href="https://bolt.new" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://www.google.com/s2/favicons?domain=bolt.new&amp;sz=128" alt="Bolt logo" loading="lazy"></span><strong>Bolt</strong></a>
+                    <a class="tool-logo-card" href="https://www.blackbox.ai" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://www.google.com/s2/favicons?domain=blackbox.ai&amp;sz=128" alt="Blackbox AI logo" loading="lazy"></span><strong>Blackbox AI</strong></a>
+                </div></div>
+                <div class="tool-category"><h3>Development &amp; Cloud</h3><div class="tool-logo-grid">
+                    <a class="tool-logo-card" href="https://supabase.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/supabase" alt="Supabase logo" loading="lazy"></span><strong>Supabase</strong></a>
+                    <a class="tool-logo-card" href="https://firebase.google.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/firebase" alt="Firebase logo" loading="lazy"></span><strong>Firebase</strong></a>
+                    <a class="tool-logo-card" href="https://code.visualstudio.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="Visual Studio Code logo" loading="lazy"></span><strong>VS Code</strong></a>
+                    <a class="tool-logo-card" href="https://github.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/github" alt="GitHub logo" loading="lazy"></span><strong>GitHub</strong></a>
+                    <a class="tool-logo-card" href="https://figma.com" target="_blank" rel="noopener"><span class="tool-logo-frame"><img src="https://cdn.simpleicons.org/figma" alt="Figma logo" loading="lazy"></span><strong>Figma</strong></a>
+                </div></div>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
+<!-- CONTACT SECTION -->
         <section id="contact">
             <div class="section-header">
                 <span class="section-badge">Get In Touch</span>
@@ -1293,9 +1137,9 @@
                 <h4>Portfolio</h4>
                 <ul>
                     <li><a href="#projects">Featured Work</a></li>
-                    <li><a href="#journey">Journey Timeline</a></li>
+                    <li><a href="#journey">My Journey</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#blog">Articles &amp; Blog</a></li>
+                    <li><a href="#tools">Tools I Use</a></li>
                 </ul>
             </div>
 
@@ -1449,7 +1293,7 @@
     </div>
 
     <!-- PROJECT CASE STUDY MODAL -->
-    <div class="modal-overlay" id="projectModal">
+    <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="projModalTitle">
         <div class="modal-container">
             <div class="modal-header">
                 <div class="modal-title" id="projModalTitle">Project Case Study</div>
@@ -1536,6 +1380,10 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script src="script.js"></script>
+    <!-- Portfolio CMS public sync (connect Supabase in supabase-config.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="cms-public.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,109 @@
-// ========== 1. ADVANCED INTERACTIVE PRELOADER ==========
+// ========== PREMIUM IN-APP NOTIFICATION SYSTEM ==========
+        // Replaces browser-style alerts with compact, animated on-screen messages.
+        (function initPortfolioNotifications(){
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            container.setAttribute('role', 'status');
+            container.setAttribute('aria-live', 'polite');
+            container.setAttribute('aria-atomic', 'false');
+
+            const iconFor = (kind) => ({
+                welcome:'✦', success:'✓', info:'↗', message:'✉', theme:'◐', work:'▣'
+            }[kind] || '✦');
+
+            window.showToast = function(message, options = {}) {
+                const kind = options.kind || 'info';
+                const title = options.title || ({
+                    welcome:'Welcome aboard',
+                    success:'All set',
+                    message:'Message sent',
+                    theme:'Appearance updated',
+                    work:'Let’s explore'
+                }[kind] || 'Portfolio update');
+
+                const toast = document.createElement('div');
+                toast.className = 'toast toast-' + kind;
+                toast.setAttribute('role', 'status');
+                toast.innerHTML = `
+                    <span class="toast-icon" aria-hidden="true">${iconFor(kind)}</span>
+                    <span class="toast-copy">
+                        <strong class="toast-title"></strong>
+                        <span class="toast-message"></span>
+                    </span>
+                    <button class="toast-dismiss" type="button" aria-label="Dismiss notification">×</button>
+                    <span class="toast-progress" aria-hidden="true"></span>`;
+                toast.querySelector('.toast-title').textContent = title;
+                toast.querySelector('.toast-message').textContent = String(message || '');
+                container.appendChild(toast);
+
+                const duration = Math.max(2600, Math.min(Number(options.duration) || 4300, 8000));
+                let timer = window.setTimeout(dismiss, duration);
+                function dismiss(){
+                    if (!toast.isConnected) return;
+                    window.clearTimeout(timer);
+                    toast.classList.add('toast-leaving');
+                    window.setTimeout(()=>toast.remove(), 260);
+                }
+                toast.querySelector('.toast-dismiss').addEventListener('click', dismiss);
+                toast.addEventListener('mouseenter',()=>window.clearTimeout(timer));
+                toast.addEventListener('mouseleave',()=>{timer=window.setTimeout(dismiss,1800);});
+                return toast;
+            };
+
+            // A small, useful message for each visitor on every fresh page visit.
+            window.addEventListener('load',()=>{
+                window.setTimeout(()=>{
+                    window.showToast(
+                        'Thanks for stopping by. Explore my projects, skills and the things I love building.',
+                        {kind:'welcome',title:'Welcome to my workspace',duration:6200}
+                    );
+                }, 900);
+            }, {once:true});
+
+            // Contextual feedback for navigation and common portfolio interactions.
+            document.addEventListener('click',(event)=>{
+                const link=event.target.closest('a[href^="#"]');
+                if(link){
+                    const target=(link.getAttribute('href')||'').slice(1);
+                    const section=document.getElementById(target);
+                    if(section && target && !['top','home'].includes(target)){
+                        const heading=section.querySelector('h1,h2,h3');
+                        const label=(heading?.textContent||target.replace(/[-_]/g,' ')).trim();
+                        window.showToast('Taking you to '+label+'.',{kind:'info',title:'Exploring the portfolio',duration:2500});
+                    }
+                    return;
+                }
+
+                const theme=event.target.closest('#themeToggle');
+                if(theme) return; // Existing theme handler already gives feedback.
+
+                const project=event.target.closest('.project-card,[data-project],.project-view-btn');
+                if(project){
+                    window.showToast('Opening the project details and case study.',{kind:'work',title:'Project selected',duration:2800});
+                    return;
+                }
+
+                const resume=event.target.closest('#resumeBtn,.btn-resume-nav,[onclick*="Resume"],[onclick*="resume"]');
+                if(resume){
+                    window.showToast('Your resume is ready to view or download.',{kind:'success',title:'Resume',duration:2800});
+                    return;
+                }
+
+                const email=event.target.closest('a[href^="mailto:"]');
+                if(email){
+                    window.showToast('Your email app is opening. Thanks for reaching out!',{kind:'message',title:'Let’s connect',duration:3200});
+                }
+            });
+
+            document.addEventListener('submit',(event)=>{
+                if(event.target.matches('#contactForm,form.contact-form')){
+                    // The CMS handler owns actual submission status; this is only an acknowledgement.
+                    window.showToast('Your message is being sent. I appreciate you reaching out!',{kind:'message',title:'Sending your message',duration:3200});
+                }
+            },true);
+        })();
+
+        // ========== 1. ADVANCED INTERACTIVE PRELOADER ==========
         const preloader = document.getElementById('preloader');
         const loaderPercent = document.getElementById('loaderPercent');
         const loaderSystemMsg = document.getElementById('loaderSystemMsg');
@@ -92,7 +197,7 @@
         function finishLoading() {
             preloader.classList.add('hidden');
             initNumbersCounter();
-            showToast('🚀 Welcome to Akash Bhuniya\'s Workspace!');
+            showToast('The workspace is ready. Take a look around and explore my work.', {kind:'success', title:'Everything is ready', duration:3000});
         }
 
         // Speed-up trigger on click or keypress
@@ -186,8 +291,9 @@
         // ========== 3. CUSTOM CURSOR ==========
         const cursorDot = document.getElementById('cursorDot');
         const cursorRing = document.getElementById('cursorRing');
+        const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-        if (window.innerWidth >= 1024) {
+        if (hasFinePointer && window.innerWidth >= 1024 && cursorDot && cursorRing) {
             document.addEventListener('mousemove', (e) => {
                 cursorDot.style.left = e.clientX + 'px';
                 cursorDot.style.top = e.clientY + 'px';
@@ -220,12 +326,12 @@
                 document.documentElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'dark');
                 themeIcon.innerHTML = moonSvg;
-                showToast('Switched to Dark Mode 🌙');
+                showToast('Switched to dark mode.', {kind:'theme', title:'Appearance updated'});
             } else {
                 document.documentElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
                 themeIcon.innerHTML = sunSvg;
-                showToast('Switched to Light Mode ☀️');
+                showToast('Switched to light mode.', {kind:'theme', title:'Appearance updated'});
             }
         });
 
@@ -233,16 +339,35 @@
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
 
+        const setMobileMenuOpen = (open) => {
+            hamburger.classList.toggle('active', open);
+            navLinks.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', String(open));
+        };
+
+        hamburger.setAttribute('aria-controls', 'navLinks');
+        hamburger.setAttribute('aria-expanded', 'false');
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('open');
+            setMobileMenuOpen(!navLinks.classList.contains('open'));
         });
 
         navAnchors.forEach(a => {
-            a.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('open');
-            });
+            a.addEventListener('click', () => setMobileMenuOpen(false));
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') setMobileMenuOpen(false);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!navLinks.classList.contains('open')) return;
+            if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+                setMobileMenuOpen(false);
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) setMobileMenuOpen(false);
         });
 
         // ========== 6. ROTATING TITLE TYPING EFFECT ==========
@@ -281,23 +406,30 @@
 
         // ========== 7. INTERACTIVE STARFIELD CONSTELLATION CANVAS ==========
         const canvas = document.getElementById('starfield');
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas?.getContext?.('2d');
         let stars = [];
         let mouse = { x: null, y: null, maxDist: 120 };
 
         function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            if (!canvas || !ctx) return;
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            canvas.width = Math.floor(window.innerWidth * dpr);
+            canvas.height = Math.floor(window.innerHeight * dpr);
+            canvas.style.width = window.innerWidth + 'px';
+            canvas.style.height = window.innerHeight + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
             initStars();
         }
 
         function initStars() {
             stars = [];
-            const count = Math.min(Math.floor((canvas.width * canvas.height) / 13000), 100);
+            const area = window.innerWidth * window.innerHeight;
+            const mobile = window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(pointer: coarse)').matches;
+            const count = Math.min(Math.floor(area / (mobile ? 30000 : 13000)), mobile ? 28 : 90);
             for (let i = 0; i < count; i++) {
                 stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
+                    x: Math.random() * window.innerWidth,
+                    y: Math.random() * window.innerHeight,
                     vx: (Math.random() - 0.5) * 0.45,
                     vy: (Math.random() - 0.5) * 0.45,
                     radius: Math.random() * 1.6 + 0.6
@@ -305,20 +437,24 @@
             }
         }
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        if (canvas && ctx && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            window.addEventListener('resize', resizeCanvas, { passive: true });
+            resizeCanvas();
+        }
 
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
+        if (canvas && ctx && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+        }
 
         window.addEventListener('mouseleave', () => {
             mouse.x = null;
             mouse.y = null;
         });
 
+        let starfieldFrame = 0;
         function animateStarfield() {
+            if (!canvas || !ctx) return;
+            if (document.hidden) { starfieldFrame = 0; return; }
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             const isLight = document.documentElement.getAttribute('data-theme') === 'light';
             const starColor = isLight ? 'rgba(37, 99, 235, 0.4)' : 'rgba(59, 130, 246, 0.6)';
@@ -368,9 +504,10 @@
                     }
                 }
             }
-            requestAnimationFrame(animateStarfield);
+            starfieldFrame = requestAnimationFrame(animateStarfield);
         }
-        animateStarfield();
+        if (canvas && ctx && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) animateStarfield();
+        document.addEventListener('visibilitychange', () => { if (!document.hidden && canvas && ctx && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && !starfieldFrame) animateStarfield(); });
 
         // ========== 8. 3D CARD TILT EFFECT ==========
         if (window.innerWidth >= 1024) {
@@ -542,38 +679,36 @@
 
         function openProjectModal(key) {
             const data = projectDetails[key];
-            if (!data) return;
-
+            if (!data || !projectModal || !projModalTitle || !projModalContent) return;
             projModalTitle.textContent = data.title;
+            projModalContent.className = 'modal-body project-case-study-content';
             projModalContent.innerHTML = `
-                <div style="margin-bottom: 18px;">
-                    <span class="skill-chip" style="color: var(--primary);">${data.tech}</span>
-                </div>
-                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 24px;">
-                    ${data.desc}
-                </p>
-                <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--text-main); margin-bottom: 14px;">Key Highlights &amp; Architecture</h4>
-                <ul style="padding-left: 20px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px;">
-                    ${data.features.map(f => `<li style="margin-bottom: 8px;">${f}</li>`).join('')}
-                </ul>
-                <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-                    <a href="#contact" onclick="closeProjectModal()" class="btn btn-primary">
-                        Discuss This Project
-                    </a>
-                    <button class="btn btn-glass" onclick="closeProjectModal()">
-                        Close
-                    </button>
-                </div>
-            `;
+                <div class="case-study-tech">${data.tech.split(',').map(item => `<span>${item.trim()}</span>`).join('')}</div>
+                <p class="case-study-description">${data.desc}</p>
+                <div class="case-study-section-heading"><span>01</span><h4>Key Highlights &amp; Architecture</h4></div>
+                <ul class="case-study-feature-list">${data.features.map(f => `<li><span class="case-study-check">✓</span><span>${f}</span></li>`).join('')}</ul>
+                <div class="case-study-actions">
+                    <a href="#contact" onclick="closeProjectModal()" class="btn btn-primary">Discuss This Project <span aria-hidden="true">↗</span></a>
+                    <button class="btn btn-glass" type="button" onclick="closeProjectModal()">Close</button>
+                </div>`;
             projectModal.classList.add('open');
+            projectModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            projectModal.querySelector('.modal-close-btn')?.focus({ preventScroll: true });
         }
 
         function closeProjectModal() {
+            if (!projectModal) return;
             projectModal.classList.remove('open');
+            projectModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
         }
 
-        projectModal.addEventListener('click', (e) => {
+        projectModal?.addEventListener('click', (e) => {
             if (e.target === projectModal) closeProjectModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && projectModal?.classList.contains('open')) closeProjectModal();
         });
 
         // ========== 14. RESUME MODAL & DOWNLOADS ==========
@@ -633,42 +768,10 @@ EDUCATION:
             showToast('Downloaded Akash_Bhuniya_Resume.txt 📄');
         }
 
-        // ========== 15. CONTACT FORM & TOASTS ==========
-        const contactForm = document.getElementById('contactForm');
-        const toastContainer = document.getElementById('toastContainer');
-
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.innerHTML = `
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px; color: #10b981;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                <span>${message}</span>
-            `;
-            toastContainer.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(10px)';
-                setTimeout(() => toast.remove(), 300);
-            }, 4000);
-        }
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (!name || !email || !subject || !message) {
-                showToast('Please fill in all fields before sending.');
-                return;
-            }
-
-            // Success feedback
-            showToast(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
-            contactForm.reset();
-            triggerConfetti();
-        });
+        // ========== 15. CONTACT FORM ==========
+        // The public CMS integration attaches the contact handler after this file.
+        // Keep this script independent of form IDs so a missing optional form cannot
+        // stop the remaining portfolio interactions from initializing.
 
         // ========== 16. EASTER EGG & CONFETTI ==========
         const confettiCanvas = document.getElementById('confettiCanvas');
@@ -757,32 +860,67 @@ EDUCATION:
             }
         });
 
-        // ========== AVATAR TOGGLE (3D vs Real Photo) ==========
+        // ========== AVATAR TOGGLE (3D vs REAL PHOTO) ==========
         const heroProfileImg = document.getElementById('heroProfileImg');
         const avatarToggleBtn = document.getElementById('avatarToggleBtn');
         const avatarToggleLabel = document.getElementById('avatarToggleLabel');
         let is3DAvatar = true;
+        window.__is3DAvatar = true;
+
+        // Preload the requested image before swapping. This prevents a blank hero
+        // when a CMS image URL is slow, stale, or unavailable.
+        window.setHeroAvatarMode = function (show3D, options = {}) {
+            if (!heroProfileImg) return Promise.resolve(false);
+            is3DAvatar = !!show3D;
+            window.__is3DAvatar = is3DAvatar;
+
+            const configured = window.PORTFOLIO_PROFILE_IMAGES || {};
+            const preferred = is3DAvatar
+                ? (configured.avatar3d || 'avatar-3d.png')
+                : (configured.real || 'profile.png');
+            const fallback = is3DAvatar ? 'avatar-3d.png' : 'profile.png';
+            const candidates = [...new Set([preferred, fallback])].filter(Boolean);
+
+            const loadCandidate = (index) => new Promise(resolve => {
+                const candidate = candidates[index];
+                if (!candidate) return resolve(false);
+                const probe = new Image();
+                probe.onload = () => {
+                    heroProfileImg.style.opacity = '0';
+                    heroProfileImg.style.transform = 'scale(.97)';
+                    requestAnimationFrame(() => {
+                        heroProfileImg.src = probe.src;
+                        heroProfileImg.alt = is3DAvatar
+                            ? 'Akash Bhuniya - 3D Developer Avatar'
+                            : 'Akash Bhuniya - Real Photo';
+                        heroProfileImg.dataset.avatarMode = is3DAvatar ? '3d' : 'real';
+                        if (avatarToggleLabel) avatarToggleLabel.textContent =
+                            is3DAvatar ? '📷 Switch to Real Photo' : '🎭 Switch to 3D Avatar';
+                        heroProfileImg.style.opacity = '1';
+                        heroProfileImg.style.transform = 'scale(1)';
+                        resolve(true);
+                    });
+                };
+                probe.onerror = () => resolve(loadCandidate(index + 1));
+                probe.src = candidate;
+            });
+            return loadCandidate(0);
+        };
 
         if (avatarToggleBtn && heroProfileImg) {
-            avatarToggleBtn.addEventListener('click', () => {
-                is3DAvatar = !is3DAvatar;
-                heroProfileImg.style.opacity = '0';
-                heroProfileImg.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    if (is3DAvatar) {
-                        heroProfileImg.src = 'avatar-3d.png';
-                        heroProfileImg.alt = 'Akash Bhuniya - 3D Developer Avatar';
-                        avatarToggleLabel.textContent = '📷 Switch to Real Photo';
-                        showToast('Switched to 3D Avatar 🎭');
-                    } else {
-                        heroProfileImg.src = 'profile.png';
-                        heroProfileImg.alt = 'Akash Bhuniya - Real Photo';
-                        avatarToggleLabel.textContent = '🎭 Switch to 3D Avatar';
-                        showToast('Switched to Real Photo 📷');
-                    }
-                    heroProfileImg.style.opacity = '1';
-                    heroProfileImg.style.transform = 'scale(1)';
-                }, 200);
+            // Keep a safe initial image and recover if an external/CMS URL fails.
+            heroProfileImg.addEventListener('error', () => {
+                const fallback = heroProfileImg.dataset.avatarMode === 'real' ? 'profile.png' : 'avatar-3d.png';
+                if (!heroProfileImg.src.endsWith(fallback)) heroProfileImg.src = fallback;
+            });
+            avatarToggleBtn.addEventListener('click', async () => {
+                const nextMode = !is3DAvatar;
+                const ok = await window.setHeroAvatarMode(nextMode);
+                if (typeof showToast === 'function') {
+                    showToast(ok
+                        ? (nextMode ? 'Switched to 3D Avatar 🎭' : 'Switched to Real Photo 📷')
+                        : 'Could not load that photo. Showing the bundled profile image.');
+                }
             });
         }
 
@@ -797,24 +935,24 @@ EDUCATION:
             const parent = el.parentElement;
             if (parent) {
                 const idx = Array.from(parent.children).indexOf(el);
-                if (idx > 0 && idx < 6) {
+                if (window.innerWidth > 768 && idx > 0 && idx < 6) {
                     el.style.transitionDelay = `${(idx % 4) * 0.12}s`;
                 }
             }
         });
 
-        const revealObserver = new IntersectionObserver((entries) => {
+        const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
                 }
             });
         }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -40px 0px'
-        });
+            threshold: 0.08,
+            rootMargin: '0px 0px -24px 0px'
+        }) : null;
 
-        revealElements.forEach(el => revealObserver.observe(el));
+        revealElements.forEach(el => { if (revealObserver) revealObserver.observe(el); else el.classList.add('revealed'); });
 
         // Spotlight Mouse Position Tracking on Cards
         document.querySelectorAll('.service-card, .project-card, .skill-box, .testimonial-card, .blog-card, .workspace-card, .contact-info-panel, .contact-form-panel').forEach(card => {

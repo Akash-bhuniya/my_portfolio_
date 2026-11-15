@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#090d18">
+  <title>Portfolio Studio · Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <div class="login-shell" id="loginShell">
+    <div class="login-card">
+      <a class="brand" href="../"><span class="brand-mark">A</span><span>PORTFOLIO<span class="brand-muted"> / STUDIO</span></span></a>
+      <div class="login-icon">✦</div>
+      <p class="eyebrow">PRIVATE WORKSPACE</p>
+      <h1>Welcome back.</h1>
+      <p class="muted">Sign in to manage your portfolio content, projects and website settings.</p>
+      <form id="loginForm" class="stack-form">
+        <label>Email address<input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="username" required></label>
+        <label>Password<input type="password" id="loginPassword" placeholder="Your password" autocomplete="current-password" required></label>
+        <button class="btn btn-primary" type="submit" id="loginButton">Sign in to dashboard <span>→</span></button>
+        <p class="form-message" id="loginMessage" role="status"></p>
+      </form>
+      <p class="login-foot"><span class="lock-dot"></span> Protected by Supabase Authentication</p>
+      <a class="back-link" href="../">← Back to public portfolio</a>
+    </div>
+  </div>
+
+  <div class="app-shell hidden" id="appShell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../"><span class="brand-mark">A</span><span>PORTFOLIO<span class="brand-muted"> / STUDIO</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav" id="sideNav">
+        <button class="nav-item active" data-page="overview"><span>◫</span> Overview</button>
+        <div class="nav-caption">CONTENT</div>
+        <button class="nav-item" data-page="profile"><span>◉</span> Profile & Hero</button>
+        <button class="nav-item" data-page="projects"><span>▦</span> Projects <b id="projectNavCount">0</b></button>
+        <button class="nav-item" data-page="skills"><span>⌘</span> Skills</button>
+        <button class="nav-item" data-page="tools"><span>✧</span> Tools I Use</button>
+        <button class="nav-item" data-page="experience"><span>▤</span> Experience</button>
+        <button class="nav-item" data-page="education"><span>⌂</span> Education</button>
+        <button class="nav-item" data-page="certificates"><span>✧</span> Certificates</button>
+        <button class="nav-item" data-page="testimonials"><span>❝</span> Testimonials</button>
+        <button class="nav-item" data-page="blog"><span>▤</span> Blog & Articles</button>
+        <button class="nav-item" data-page="resume"><span>⇩</span> Resume</button>
+        <div class="nav-caption">WEBSITE</div>
+        <button class="nav-item" data-page="sections"><span>☷</span> Sections & Layout</button>
+        <button class="nav-item" data-page="appearance"><span>◐</span> Appearance</button>
+        <button class="nav-item" data-page="seo"><span>⌕</span> SEO & Social</button>
+        <button class="nav-item" data-page="footer"><span>▣</span> Footer & Links</button>
+        <button class="nav-item" data-page="media"><span>▧</span> Media Library</button>
+        <div class="nav-caption">INSIGHTS</div>
+        <button class="nav-item" data-page="messages"><span>✉</span> Messages</button>
+        <button class="nav-item" data-page="analytics"><span>⌁</span> Analytics</button>
+        <button class="nav-item" data-page="history"><span>◷</span> Version History</button>
+        <button class="nav-item" data-page="settings"><span>⚙</span> Settings</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="admin-avatar" id="adminAvatar">A</div><div class="admin-meta"><strong id="adminEmail">Admin</strong><span>Portfolio owner</span></div><button class="icon-button" id="logoutButton" title="Sign out">↗</button></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div class="breadcrumbs">Workspace <span>/</span> <strong id="pageCrumb">Overview</strong></div><div class="top-actions"><span class="save-indicator" id="saveIndicator">● All changes synced</span><a class="preview-button" href="../" target="_blank" rel="noopener">View portfolio ↗</a></div></header>
+      <div class="page-wrap">
+        <section class="page-heading"><div><p class="eyebrow" id="pageEyebrow">YOUR CONTROL CENTER</p><h1 id="pageTitle">Good morning, Akash.</h1><p class="muted" id="pageDescription">Here's what's happening with your portfolio today.</p></div><div id="headingAction"></div></section>
+        <div id="pageContent" aria-live="polite"></div>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog class="editor-dialog" id="editorDialog"><form method="dialog" id="recordForm"><div class="dialog-head"><div><p class="eyebrow">CONTENT EDITOR</p><h2 id="dialogTitle">Add item</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div><div class="editor-fields" id="editorFields"></div><div class="dialog-actions"><button class="btn btn-quiet" value="cancel">Cancel</button><button class="btn btn-primary" id="recordSave" value="default">Save changes</button></div></form></dialog>
+</body>
+</html>
